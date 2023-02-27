@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/common_padding_min"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvOperation"
+        android:layout_height="wrap_content"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        tools:text="5x2"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/MyTextView"
+        tools:ignore="MissingConstraints"/>
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_height="0dp"
+        android:textAppearance="?attr/textAppearanceHeadline3"
+        android:gravity="center_vertical|end"
+        android:layout_marginBottom="@dimen/common_padding_min"
+        tools:text="10.0"
+        app:layout_constraintTop_toBottomOf="@id/tvOperation"
+        app:layout_constraintBottom_toTopOf="@id/llTop"
+        style="@style/MyTextView"
+        tools:ignore="MissingConstraints"/>
+
+    <LinearLayout
+        android:id="@+id/llBottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/MyLinearLayout"
+        tools:ignore="MissingConstraints">
+        <Button
+            android:id="@+id/btnPoint"
+            android:text="@string/calc_btn_point"
+            style="@style/ButtonSecondary"/>
+        <Button
+            android:id="@+id/btnZero"
+            android:text="@string/calc_btn_zero"
+            style="@style/ButtonNumeric"/>
+        <Button
+            android:id="@+id/btnResolve"
+            android:layout_weight="50"
+            android:text="@string/calc_btn_resolve"
+            android:layout_marginStart="@dimen/common_padding_default"
+            style="@style/ButtonSecondary"
+            tools:ignore="InefficientWeight" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llPreBottom"
+        app:layout_constraintBottom_toTopOf="@id/llBottom"
+        style="@style/MyLinearLayout"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/btnOne"
+            android:text="@string/calc_btn_one"
+            style="@style/ButtonNumeric"/>
+        <Button
+            android:id="@+id/btnTwo"
+            android:text="@string/calc_btn_two"
+            style="@style/ButtonNumeric"/>
+
+        <Button
+            android:id="@+id/btnThree"
+            android:text="@string/calc_btn_three"
+            style="@style/ButtonNumeric"/>
+        <Button
+            android:id="@+id/btnSum"
+            android:text="@string/calc_btn_sum"
+            style="@style/ButtonOperator"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llMiddle"
+        app:layout_constraintBottom_toTopOf="@id/llPreBottom"
+        style="@style/MyLinearLayout"
+        tools:ignore="MissingConstraints">
+
+
+        <Button
+            android:id="@+id/btnFour"
+            android:text="@string/calc_btn_four"
+            style="@style/ButtonNumeric"/>
+        <Button
+            android:id="@+id/btnFive"
+            android:text="@string/calc_btn_five"
+            style="@style/ButtonNumeric"/>
+
+        <Button
+            android:id="@+id/btnSix"
+            android:text="@string/calc_btn_six"
+            style="@style/ButtonNumeric"/>
+        <Button
+            android:id="@+id/btnSub"
+            android:text="@string/calc_btn_sub"
+            style="@style/ButtonOperator"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llPreTop"
+        app:layout_constraintBottom_toTopOf="@id/llMiddle"
+        style="@style/MyLinearLayout"
+        tools:ignore="MissingConstraints">
+
+
+        <Button
+            android:id="@+id/btnSeven"
+            android:text="@string/calc_btn_seven"
+            style="@style/ButtonNumeric"/>
+        <Button
+            android:id="@+id/btnEight"
+            android:text="@string/calc_btn_eight"
+            style="@style/ButtonNumeric"/>
+
+        <Button
+            android:id="@+id/btnNine"
+            android:text="@string/calc_btn_nine"
+            style="@style/ButtonNumeric"/>
+        <Button
+            android:id="@+id/btnMulti"
+            android:text="@string/calc_btn_multi"
+            android:textAllCaps="false"
+            style="@style/ButtonOperator"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llTop"
+        app:layout_constraintBottom_toTopOf="@id/llPreTop"
+        style="@style/MyLinearLayout"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_weight="50"
+            android:text="@string/calc_btn_clear"
+            android:layout_marginEnd="@dimen/common_padding_min"
+            style="@style/ButtonWarning"
+            tools:ignore="InefficientWeight" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDelete"
+            app:icon="@drawable/ic_backspace"
+            app:iconGravity="textStart"
+            app:iconPadding="@dimen/common_padding_none"
+            style="@style/ButtonSecondary"/>
+        <Button
+            android:id="@+id/btnDiv"
+            android:text="@string/calc_btn_div"
+            style="@style/ButtonOperator"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
